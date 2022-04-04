@@ -1,0 +1,29 @@
+
+.clase{
+    text-align: right;
+}
+
+#caja{
+  width: 300px;
+  border: 15px solid rgb(161, 211, 161);
+  padding: 20px;
+  margin: 20px;
+}
+
+.navbar{
+  background-color: aquamarine;
+}
+
+.titulo{
+  text-align: left;
+}
+footer{
+  background-color: aquamarine;
+}
+.padcarrousel{
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.videoYT{
+  padding-left: 35%;
+}
