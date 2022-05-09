@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+
+    <title>Jardineria</title>
+    <script>
+      function Fecha(){
+  var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+  var f=new Date();
+  alert(f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+      }
+    </script>
+    <style>
+      li {
+      border-right: 1px solid #bbb;
+    }
+    li:last-child {
+      border-right: none;
+    }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <!-- logo -->
+          <a class="navbar-brand" href="#">
+            <img src="img/icono.png" width="30" height="30" alt="">
+          </a>
+          
+          <!-- enlaces -->
+          <div class="collapse navbar-collapse" id="opciones">   
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="somos.html">Conocenos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="galeria.html">Galería</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contacto.html">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="registro.html">Registrar</a>
+              </li>              
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <br>
+
+      <div class="container-fluid">   
+        <h1>Nuestras plantas principales</h1>
+        <h3>Ve la fecha de hoy! </h3>
+        <input type="button" name="btn1" id="btn1" value="Fecha hoy"
+            onclick="Fecha()"><hr>
+        <div class="row">       
+          <div class="col-md">        
+              <div class="card">
+                <img class="card-img-top" src="img/girasoles.jpg">            
+                <div class="card-body">
+                  <h4 class="card-title">Girasol</h4>
+                  <p class="card-text">Una linda planta proveniente de América del Norte donde las comunidades la consideran una planta sagrada puesto a que esta gira siempre orientandose hacía nuestro sol.</p>
+                  <a href="https://www.bioenciclopedia.com/girasol-comun/" class="btn btn-primary">conocer mas</a>
+                </div>
+              </div>          
+          </div>
+    
+          <div class="col-md">        
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Hortensias/Hydrangea</h4>
+                  <p class="card-text">Proveniente del sur y este de asía,estando incluso en Indonesia y el Himalaya. existen muchas variedad y clases de esta llegando estar en arbustos de tres metros de alto.  </p>
+                  <a href="https://www.anasacjardin.cl/cuidado-de-plantas/plantas-acidas/hortensias/v" class="btn btn-primary">conocer mas</a>
+                </div>
+                <img class="card-img-bottom" src="img/hortensias.jpg">                        
+              </div>          
+          </div>
+    
+          <!--otra fila-->
+          <br>
+          <hr>
+    
+          <div class="row">       
+            <div class="col-md">        
+                <div class="card">
+                  <img class="card-img-top" src="img/dalias.jpg">            
+                  <div class="card-body">
+                    <h4 class="card-title">Dalias</h4>
+                    <p class="card-text">Elegancia y dulzura son lo que caracterizan a las dalias,estas plantas son propias de la primavera por eso es tan preciada aparte de sus tonos realmente bonitos y vivos en intensidad. </p>
+                    <a href="https://www.hogarmania.com/jardineria/fichas/plantas/dalia-dahlia-pinnata-11700.htmlhttps://www.hogarmania.com/jardineria/fichas/plantas/dalia-dahlia-pinnata-11700.html" class="btn btn-primary">conocer mas </a>
+                  </div>
+                </div>          
+            </div>
+      
+            <div class="col-md">        
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Claveles</h4>
+                    <p class="card-text">Originaria del artico de América del norte y sudafrica,pero actualmente se puede encontrar en resto de lugares, sin embargo, el clavel chino es el más preciado dentro de la gamma que existe hoy en día. </p>
+                    <a href="http://www.florespedia.com/claveles" class="btn btn-primary">Entrar</a>
+                  </div>
+                  <img class="card-img-bottom" src="img/claveles.jpg">                        
+                </div>          
+            </div>
+    
+    
+          
+        </div>
+      </div>
+      <br>
+
+      <div class="row">       
+        <div class="col-md">        
+            <div class="card">
+              <img class="card-img-top" src="img/flores-de-loto.jpg">            
+              <div class="card-body">
+                <h4 class="card-title">Flores de loto</h4>
+                <p class="card-text">Planta acuática cuyas hoyas glotan, suelen encontrarse al sur de Rusia o en Siberia oriental y China aunque en otros tipos de tonos. </p>
+                <a href="https://www.florespedia.com/nenufares" class="btn btn-primary">conocer mas </a>
+              </div>
+            </div>          
+        </div>
+  
+        <div class="col-md">        
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Lirios</h4>
+                <p class="card-text">Planta proveniente de la familia de las liliáceas que crenen en todo Europa, Japon y el sur de la India, ésta planta se caracteriza por la variedad en sus tonos , ya que ninguna sera igual a la anterior. </p>
+                <a href="http://www.florespedia.com/lirios" class="btn btn-primary">conocer mas</a>
+              </div>
+              <img class="card-img-bottom" src="img/lirios.jpg">                        
+            </div>          
+        </div>
+
+
+      
+    </div>
+  </div>
+  <br>
+ 
+
+
+    <!--inicio footer-->
+<footer class="page-footer font-small unique-color-dark">
+    <br>
+    <div class="container text-center text-md-left mt-5">
+  
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!--Integrantes-->
+          <h6 class="text-uppercase font-weight-bold">Integrantes</h6>
+          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto color" style="width: 108px;">
+          <p>
+            <a>Dilan Campos</a>
+          </p>
+          <p>
+            <a>Mathias Espinosa</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <h6 class="text-uppercase font-weight-bold">Contacto</h6>
+          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 85px;">
+          <p>
+            <a>GreenGarden@gmail.com</a>
+          <p>
+            <a>+569 6426 8566</a>
+          </p>
+          
+  
+        </div>
+      </div>
+    </div>
+    
+      <div class="container pt-4 text-center">
+        <!-- seccion: Social media -->
+      
+        <section class="mb-4" >
+          <button type="button" class="btn btn-primary" ><a href="https://web.facebook.com"><img src="img/facebook.png" width="40x" height="40px"></a></button>
+            <button type="button" class="btn btn-primary" ><a href="https://www.instagram.com"><img src="img/instagram.png" width="40px" height="40x"></a></button>
+            <button type="button" class="btn btn-primary" ><a href="https://twitter.com"><img src="img/twiter.png"  width="40px" height="40px"></a></button>
+        </section>
+      </div>
+      
+    
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3 defuminado" style="color: rgb(0, 0, 0);">© 2022 Copyright:
+      <a > Derechos reservados</a>
+    </div>
+
+  </footer>
+
+</body>
+</html>
