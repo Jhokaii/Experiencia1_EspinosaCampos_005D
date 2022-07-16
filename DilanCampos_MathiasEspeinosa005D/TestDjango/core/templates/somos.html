@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="{% static 'css/bootstrap.min.css' %}" type="text/css" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+    <title>Jardineria</title>
+   
+    <style>
+      li {
+      border-right: 1px solid #bbb;
+    }
+    li:last-child {
+      border-right: none;
+    }
+    </style>
+    <input type="text" id="n1" placeholder="Calcula tus">
+    <input type="text" id="n2" placeholder="Gastos acá">
+    
+    
+    <button id="suma">+</button>
+    <button id="resta">-</button>
+    <button id="multiplicacion">*</button>
+    <button id="division">/</button>
+    <button id="calcular">Calcular</button>
+    
+    <output id="r"></output> 
+    <script>
+        let op;
+        document.querySelector('#suma').addEventListener('click', () =>{
+            op = '+';
+        });
+        document.querySelector('#resta').addEventListener('click', () =>{
+            op = '-';
+        });
+        document.querySelector('#multiplicacion').addEventListener('click', () =>{
+            op = '*';
+        });
+        document.querySelector('#division').addEventListener('click', () =>{
+            op = '/';
+        });
+    
+        document.querySelector('#calcular').addEventListener('click', () =>{
+            const n1 = parseInt(document.querySelector('#n1').value);
+            const n2 = parseInt(document.querySelector('#n2').value);
+            //const op = document.querySelector('#op').value;
+            let r;
+            if(op == '+'){
+                r = n1 + n2;
+            }else if( op == '-'){
+                r = n1 - n2;
+            }else if(op == '*'){
+                r = n1 * n2;
+            }else if(op == '/'){
+                r = n1 / n2;
+            }
+            document.querySelector('#r').innerHTML = r;
+        });
+    
+    </script>
+
+    
+</head>
+
+<body>
+  {% load static %}
+
+    <div class="navbar">
+        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      {% if user.is_authenticated %}
+        <a href="{% url 'mostrar' %}" class="btn btn-success">Mostrar Plantas</a>
+    
+        <a href="{%  url 'logout' %}" class="btn btn-primary">Cerrar Sesión</a>
+
+        <a href="#">Bienvenido @{{user.username}}</a>
+      {% endif %}
+        <a href="{% url 'login' %}" class="btn btn-primary">Iniciar Sesión</a>
+    
+          
+          <!-- logo -->
+          <a class="navbar-brand" href="#">
+            <img src="{% static 'img/icono.png' %}" width="30" height="30" alt="">
+          </a>
+          
+          <!-- enlaces -->
+          <div class="collapse navbar-collapse" id="opciones">   
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'somos' %}">Conocenos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'galeria' %}">Galeria</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'registro' %}">Registrar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'mostrar' %}">Mostrar</a>
+              </li>
+           
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <br>
+      <div class="container-fluid">   
+        <h1>GreenGarden</h1>
+        <div class="row">       
+          <div class="col-md">        
+              <div class="card text-center">
+                <div class="card-body">
+
+                  <h4 class="card-title">Conocenos</h4>
+                  <p1 class="card-text">Somos una empresa dedicada a la incorporación y mantención de plantas en un jardín con intenciones de traer la nataruleza a tu hogar.</p1>
+                </div>
+              </div>
+          </div>
+        </div>
+        <h3>Ve la fecha de hoy! </h3>
+        <input type="button" name="btn1" id="btn1" value="Fecha hoy"
+            onclick="Fecha()">
+            <br><hr>
+
+
+  <div class="container-fluid">  
+    <iframe width="400" height="250" src="https://www.youtube.com/embed/mOIM0xfDUA0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+      <br>
+        
+        <div class="row">       
+          <div class="col-md">        
+              <div class="card text-center">
+                <div class="card-body">
+                  <h4 class="card-title">Objetivo</h4>
+                  <p2 class="card-text">Buscamos la incorporación y mantención de plantas en un jardín, dando una mejor estética al hogar</p2>
+                </div>
+              </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">       
+          <div class="col-md">        
+              <div class="card text-center">
+                <div class="card-body">
+                  <h4 class="card-title">Que Ofrecemos</h4>
+                  <ul class="card-text">
+                    <li>Nuestro servicio ofrece mantención de todo tipo de plantas.</li>
+                    <li>Horarios disponibles a partir de 8:00 am hasta 16:00 pm desde lunes a viernes.</li>
+                    <li>Cobro por tamaño de la planta: 20cm-60cm $5000 -- 61cm-120cm $10.000 -- 121cm-180 $15.000 -- 181cm-240 $20.000 -- 241cm-300cm 30.000</li>
+                    <li>Equipo profecional.</li>
+                    <p3 class="card-text">Ejemplos de trabajos anteriores:</p3>
+                  </ul>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="container-fluid">
+    
+          <div id="carousel1" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel1" data-slide-to="1"></li>
+              <li data-target="#carousel1" data-slide-to="2"></li>
+            
+            </ol>
+            <!-- diapositivas -->
+            <div class="padcarrousel">  
+              <div class="carousel-inner ">
+                
+                <div class="carousel-item active">
+                  <a href="#"><img class="d-block w-100" src="{% static 'img/EjemploPlanta1.jpg' %}" alt="" width="1024px" height="683"> </a>
+                  <div class="carousel-caption">
+                    <p>Trabajo de podar y mantención de jardín</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="{% static 'img/EjemploPlanta2.jpg' %}" alt="" width="1024px" height="683">
+                    <div class="carousel-caption">
+                      <p>Trabajo de podar, mantención de jardín e instalaciones de variedad de rosas</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="{% static 'img/EjemploPlanta3.jpg' %}" alt="" width="1024px" height="683">
+                    <div class="carousel-caption">
+                      <p>Trabajo de podar el jardín</p>
+                    </div>
+                </div>
+              </div>
+
+              <!-- botones de desplazamiento a izquierda y derecha -->      
+              <a class="carousel-control-prev" href="#carousel1" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carousel1" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      <br>
+      <br>
+
+          <!--inicio footer-->
+<footer class="page-footer font-small unique-color-dark">
+  
+  <br>
+
+  <div class="container text-center text-md-left mt-5">
+    <!-- Grid row -->
+    <div class="row mt-3">
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+        <!--Integrantes-->
+        <h6 class="text-uppercase font-weight-bold">Integrantes</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto color" style="width: 108px;">
+        <p>
+          <a>Dilan Campos</a>
+        </p>
+        <p>
+          <a>Mathias Espinosa</a>
+        </p>
+      </div>
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+        <h6 class="text-uppercase font-weight-bold">Contacto</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 85px;">
+        <p>
+          <a>GreenGarden@gmail.com</a>
+        <p>
+          <a>+569 6426 8566</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  
+
+    <div class="container pt-4 text-center">
+      <!-- seccion: Social media -->
+      <section class="mb-4" >
+        <button type="button" class="btn btn-primary" ><a href="https://web.facebook.com"><img src="{% static 'img/facebook.png' %}" width="40x" height="40px"></a></button>
+          <button type="button" class="btn btn-primary" ><a href="https://www.instagram.com"><img src="{% static 'img/instagram.png' %}" width="40px" height="40x"></a></button>
+          <button type="button" class="btn btn-primary" ><a href="https://twitter.com"><img src="{% static 'img/twiter.png' %}"  width="40px" height="40px"></a></button>
+      </section>
+    </div>
+     <!-- Copyright -->
+     <div class="footer-copyright text-center py-3 defuminado" style="color: rgb(0, 0, 0);">© 2022 Copyright:
+      <a > Derechos reservados</a>
+    </div>
+</footer>
+  
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+
+
+</body>
+</html>
